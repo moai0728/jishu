@@ -1,0 +1,20 @@
+<%=  image_tag "logo.gif", size:"272x48", alt:"Morning Glory"  %>
+
+
+<nav class="menubar">
+  <ul class="menu">
+    <%= menu_link_to "TOP", :root %>
+    <%= menu_link_to "ニュース","about" %>
+    <%= menu_link_to "ブログ","#" %>
+    <% if current_member %>
+    <%= menu_link_to "会員名簿", :members %>
+    <%= menu_link_to "管理ページ","#" %>
+    <% if current_member %>
+    <li　class="account-menu">　　　　　　ようこそ、
+        <%= menu_link_to current_member.name + "さん", :account %></li>
+        <%= menu_link_to "ログアウト", :session,
+              method: :delete, data: { confirm: "ログアウトしますか？" } %>
+    <% end %>
+    <% end %>
+    </ul>
+</nav>

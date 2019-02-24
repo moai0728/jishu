@@ -1,0 +1,15 @@
+current directory: /mnt/c/Users/lenon/Desktop/ubuntu/vendor/bundler/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/oiax/.rbenv/versions/2.5.1/bin/ruby -I /home/oiax/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190216-218-15n5v2h.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/lenon/Desktop/ubuntu/vendor/bundler/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /mnt/c/Users/lenon/Desktop/ubuntu/vendor/bundler/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /mnt/c/Users/lenon/Desktop/ubuntu/vendor/bundler/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20190216-218-15nzymr
