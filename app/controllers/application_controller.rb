@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   class LoginRequired < StandardError; end
   class Forbidden < StandardError; end
 
-    private def login_required
-      raise LoginRequired unless current_member
-    end
+  private def login_required
+    raise LoginRequired unless current_member
+  end
 end
