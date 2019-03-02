@@ -11,11 +11,23 @@ class AccountsController < ApplicationController
 
   def update
     @member = current_member
-    @member.assign_attributes(params[:account])
+    @member.assign_attributes(account_params)
     if @member.save
       redirect_to :account, notice: "アカウント情報を更新しました。"
     else
       render "edit"
     end
-  end
+   end
+
+   #ストロング・パラメーター
+   private def account_params
+     params.require(:account).permit(
+       :new_profile_picture,
+       :number,
+       :fullname,
+       :sex,
+       :birthday,
+       :email
+     )
+   end
 end
