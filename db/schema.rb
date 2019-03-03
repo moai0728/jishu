@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_064349) do
+ActiveRecord::Schema.define(version: 2019_03_03_133303) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2019_03_02_064349) do
     t.index ["member_id"], name: "index_entries_on_member_id"
   end
 
+  create_table "entry_images", force: :cascade do |t|
+    t.integer "entry_id"
+    t.string "alt_text", default: "", null: false
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_entry_images_on_entry_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.integer "number", null: false
     t.string "name", null: false
@@ -65,6 +74,15 @@ ActiveRecord::Schema.define(version: 2019_03_02_064349) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "entry_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_votes_on_entry_id"
+    t.index ["member_id"], name: "index_votes_on_member_id"
   end
 
 end
