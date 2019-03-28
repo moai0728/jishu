@@ -41,12 +41,13 @@ class Member < ApplicationRecord
   end
 
   before_save do
-    if new_profile_picture
-      self.profile_picture = new_profile_picture
-    elseif remove_profile_picture
-      self.profile_picture.purge
-    end
-  end
+   if new_profile_picture
+     self.profile_picture = new_profile_picture
+   elsif remove_profile_picture
+     self.profile_picture.purge
+   end
+ end
+
 
   def votable_for?(entry)
     entry && entry.author != self && !votes.exists?(entry_id: entry.id)
